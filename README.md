@@ -140,8 +140,9 @@ This project uses the **Hugging Face Inference API** to:
 ## 👩‍💻 Developers
 
 - **Khushboo Joshi**
-- BCA Student
-- JIMS Rohini, GGSIPU
+- **Aditya Pratap Singh**
+- **Parshvi Jain**
+- **Vignesh Iyer**
 
 ---
 
