@@ -313,6 +313,7 @@ export default function VenueUploadPage() {
                   className="w-full bg-dark-900 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-cyan-500"
                 >
                   <option value="Stadium">Stadium / Arena</option>
+                  <option value="Formula 1 Circuit">Formula 1 Circuit</option>
                   <option value="Exhibition">Trade Exhibition</option>
                   <option value="Concert">Music Festival</option>
                   <option value="Convention">Convention Center</option>
