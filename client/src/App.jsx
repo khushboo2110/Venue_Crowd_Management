@@ -29,7 +29,7 @@ function AppLayout({ children }) {
   }
 
   return (
-    <div className="min-h-screen bg-dark-900 flex flex-col selection:bg-cyan-500 selection:text-black">
+    <div className="min-h-screen bg-dark-900 text-slate-100 flex flex-col selection:bg-cyan-500 selection:text-black">
       <Navbar />
       <EmergencyOverlay />
       <div className="flex flex-1 overflow-hidden">

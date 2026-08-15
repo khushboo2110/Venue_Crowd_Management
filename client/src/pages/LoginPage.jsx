@@ -14,12 +14,16 @@ export default function LoginPage() {
     e.preventDefault();
     const mockUser = {
       id: "u-101",
-      name: email.split("@")[0] || "Manager",
+      name: email.split("@")[0] || "User",
       email,
       role
     };
     login(mockUser, "jwt_token_sih_2026");
-    navigate("/dashboard");
+    if (role === "Admin") {
+      navigate("/venue");
+    } else {
+      navigate("/dashboard");
+    }
   };
 
   const handleQuickDemo = (demoRole) => {
@@ -30,7 +34,11 @@ export default function LoginPage() {
       role: demoRole
     };
     login(demoUser, "jwt_demo_token");
-    navigate("/dashboard");
+    if (demoRole === "Admin") {
+      navigate("/venue");
+    } else {
+      navigate("/dashboard");
+    }
   };
 
   return (

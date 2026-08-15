@@ -75,10 +75,19 @@ export default function Navbar() {
 
       {/* Right User & AI Status */}
       <div className="flex items-center space-x-4">
-        {/* Hugging Face AI Status */}
-        <div className="hidden md:flex items-center space-x-2 text-xs text-slate-400 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
-          <Cpu className={`w-3.5 h-3.5 ${hfToken ? "text-cyan-400" : "text-amber-400"}`} />
-          <span>AI: <strong className={hfToken ? "text-cyan-400" : "text-amber-400"}>{hfToken ? "HuggingFace API" : "Local AI Fallback"}</strong></span>
+        {/* Hugging Face AI Status Badge */}
+        <div className={`hidden md:flex items-center space-x-2 text-xs px-3 py-1.5 rounded-xl border transition-all ${
+          hfToken 
+            ? "bg-emerald-500/15 text-emerald-400 border-emerald-500/40 shadow-sm shadow-emerald-500/20" 
+            : "bg-amber-500/10 text-amber-400 border-amber-500/30"
+        }`}>
+          <div className="relative flex items-center">
+            <Cpu className="w-4 h-4 mr-1" />
+            <span className={`w-2 h-2 rounded-full ${hfToken ? "bg-emerald-400 animate-pulse" : "bg-amber-400"}`}></span>
+          </div>
+          <span>
+            AI: <strong className="font-bold">{hfToken ? "Hugging Face Live (Qwen-3-4B)" : "Local AI Fallback"}</strong>
+          </span>
         </div>
 
         {/* Role Toggle Switcher */}

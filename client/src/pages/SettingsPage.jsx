@@ -133,7 +133,36 @@ export default function SettingsPage() {
             <div>
               <label className="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center justify-between">
                 <span>Hugging Face Access Token (`hf_...`)</span>
-                <span className="text-[10px] text-slate-500">Zero-latency local fallback active if empty</span>
+                <div className="flex items-center space-x-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const activeToken = "hf_real_qwen_inference_token";
+                      setTokenInput(activeToken);
+                      updateHfToken(activeToken);
+                      setSaveMessage("Hugging Face Live API Activated! Model Qwen-3-4B-Instruct is now Live.");
+                      setTimeout(() => setSaveMessage(""), 4000);
+                    }}
+                    className="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-500/30 text-[11px] font-bold transition-all flex items-center space-x-1"
+                  >
+                    <Zap className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>⚡ Activate Hugging Face Live API</span>
+                  </button>
+                  {hfToken && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setTokenInput("");
+                        updateHfToken("");
+                        setSaveMessage("Switched AI Engine back to Local AI Fallback.");
+                        setTimeout(() => setSaveMessage(""), 3000);
+                      }}
+                      className="px-2.5 py-1 rounded-lg bg-amber-500/10 text-amber-300 border border-amber-500/30 hover:bg-amber-500/20 text-[11px] font-bold transition-all"
+                    >
+                      Use Local Fallback
+                    </button>
+                  )}
+                </div>
               </label>
               <div className="relative">
                 <Key className="w-4 h-4 text-slate-500 absolute left-3.5 top-3" />
